@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using HighHandedApp;
 
-namespace Tests
+namespace HighHandedTests
 {
     public class TestPlayHand
     {
