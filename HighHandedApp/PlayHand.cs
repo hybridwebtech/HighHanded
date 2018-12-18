@@ -47,8 +47,8 @@ namespace HighHandedApp
                 return AMBIGUOUS_INPUT_MSG;
             }
 
-            string handA = hands[0];
-            string handB = hands[1];
+            string handA = hands[0].ToUpper();
+            string handB = hands[1].ToUpper();
 
             if (handA.Length != 5 || handB.Length != 5)
             {
@@ -72,6 +72,11 @@ namespace HighHandedApp
             }
 
             return true;
+        }
+
+        public static HandRating GetHandRating( string hand )
+        {
+            throw new NotImplementedException();
         }
     }
 }
