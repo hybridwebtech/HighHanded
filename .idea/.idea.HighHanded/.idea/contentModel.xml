@@ -19,9 +19,11 @@
             </e>
           </e>
         </e>
+        <e p="PairPatternChecker.cs" t="Include" />
         <e p="PatternCheckerBase.cs" t="Include" />
         <e p="PlayHand.cs" t="Include" />
         <e p="Program.cs" t="Include" />
+        <e p="ThreeOfAKindPatternChecker.cs" t="Include" />
       </e>
       <e p="HighHandedTests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -35,7 +37,7 @@
             </e>
           </e>
         </e>
-        <e p="PairPatternChecker.cs" t="Include" />
+        <e p="PairPatternCheckerTests.cs" t="Include" />
         <e p="TestPlayHand.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />

@@ -19,7 +19,7 @@ namespace HighHandedApp
                 throw new Exception( "Pattern list has not been initialized" );
             }
 
-            for ( int i = 0; i < _patterns.Count; i++ )
+            for ( int i = _patterns.Count - 1; i >= 0; i-- )
             {
                 if ( hand.Contains( _patterns[i] ) )
                 {
