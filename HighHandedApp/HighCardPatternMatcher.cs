@@ -15,7 +15,7 @@ namespace HighHandedApp
             };
         }
         
-        public int CheckHand( string hand )
+        public int CheckHand( string hand, int exclude = -1 )
         {
             if ( string.IsNullOrWhiteSpace( hand ) || hand.Length != 5 )
             {
