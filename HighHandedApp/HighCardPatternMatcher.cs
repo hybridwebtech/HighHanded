@@ -3,9 +3,17 @@ using System.Collections.Generic;
 
 namespace HighHandedApp
 {
-    public class PatternCheckerBase: IPatternChecker
+    public class HighCardPatternMatcher: IPatternChecker
     {
-        protected static List<string> _patterns = new List<string>();
+        private List<string> _patterns;
+        
+        public HighCardPatternMatcher() : base()
+        {
+            _patterns = new List<string>()
+            {
+                "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A",
+            };
+        }
         
         public int CheckHand( string hand )
         {
@@ -21,13 +29,13 @@ namespace HighHandedApp
 
             for ( int i = _patterns.Count - 1; i >= 0; i-- )
             {
-                if ( hand.Contains( _patterns[i] ) )
+                if ( hand.StartsWith( _patterns[i] ) )
                 {
                     return i;
                 }
             }
 
             return -1;
-        }
+        }        
     }
 }

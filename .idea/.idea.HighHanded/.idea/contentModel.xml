@@ -11,7 +11,9 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="FourOfAKindPatternChecker.cs" t="Include" />
         <e p="HandRating.cs" t="Include" />
+        <e p="HighCardPatternMatcher.cs" t="Include" />
         <e p="HighHandedApp.csproj" t="IncludeRecursive" />
+        <e p="IPatternChecker.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.1" t="Include">
@@ -29,6 +31,7 @@
       <e p="HighHandedTests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="FourOfAKindPatternCheckerTests.cs" t="Include" />
+        <e p="HighCardPatternMatcherTests.cs" t="Include" />
         <e p="HighHandedTests.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
