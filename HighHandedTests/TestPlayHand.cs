@@ -1,8 +1,9 @@
 using NUnit.Framework;
+using HighHandedApp;
 
 namespace Tests
 {
-    public class Tests
+    public class TestPlayHand
     {
         [SetUp]
         public void Setup()
