@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace HighHandedApp
 {
+    /// <summary>
+    /// Encapsulate the logic to run the poker simulator
+    /// </summary>
     public class PlayHand
     {
         public static string INVALID_INPUT_MSG 
