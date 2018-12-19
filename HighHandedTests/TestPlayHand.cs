@@ -93,14 +93,18 @@ namespace HighHandedTests
         [Test]
         public void Test_IsValid_Hand_With_Illegal_Input()
         {
-            Assert.IsFalse(PlayHand.IsValidHand("1234%"));
+            var playHand = new PlayHand();
+            
+            Assert.IsFalse(playHand.IsValidHand("1234%"));
         }
         
         [Test]
         public void Test_IsValid_Hand_With_Legal_Input()
         {
-            Assert.IsTrue(PlayHand.IsValidHand("*2345"));
-            Assert.IsTrue(PlayHand.IsValidHand("AAKKK"));
+            var playHand = new PlayHand();
+            
+            Assert.IsTrue(playHand.IsValidHand("*2345"));
+            Assert.IsTrue(playHand.IsValidHand("AAKKK"));
         }        
         
         [Test]

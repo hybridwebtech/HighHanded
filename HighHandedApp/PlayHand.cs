@@ -24,6 +24,27 @@ namespace HighHandedApp
             = "Illegal character in hand";
 
         public static string LegalCharacters = "*23456789TJQKA";
+
+        private static List<Tuple<HandRating, IPatternChecker>> _handCheckers 
+            = new List<Tuple<HandRating, IPatternChecker>>();
+        
+        public PlayHand()
+        {
+            _handCheckers.Add( new Tuple<HandRating, IPatternChecker>( HandRating.FOUROFAKIND,
+                new FourOfAKindPatternChecker() ));
+            _handCheckers.Add( new Tuple<HandRating, IPatternChecker>( HandRating.FULLHOUSE, 
+                new FullHousePatternChecker() ) );
+            _handCheckers.Add( new Tuple<HandRating, IPatternChecker>( HandRating.STRAIGHT, 
+                new StraightPatternChecker() ) );
+            _handCheckers.Add( new Tuple<HandRating, IPatternChecker>( HandRating.THREEOFAKIND,
+                new ThreeOfAKindPatternChecker() ) );
+            _handCheckers.Add( new Tuple<HandRating, IPatternChecker>( HandRating.TWOPAIR, 
+                new TwoPairPatternChecker() ) );
+            _handCheckers.Add( new Tuple<HandRating, IPatternChecker>( HandRating.PAIR, 
+                new PairPatternChecker() ) );
+            _handCheckers.Add( new Tuple<HandRating, IPatternChecker>( HandRating.HIGHCARD, 
+                new HighCardPatternMatcher() ) );
+        }
                     
         public string Play(string input)
         {
@@ -81,7 +102,7 @@ namespace HighHandedApp
             return result;
         }
 
-        public static bool IsValidHand(string hand)
+        public bool IsValidHand(string hand)
         {
             foreach (var c in hand)
             {
@@ -92,7 +113,7 @@ namespace HighHandedApp
             return true;
         }
 
-        public static string SortHand( string unsorted )
+        public string SortHand( string unsorted )
         {
             List<char>[] cards = new List<char>[LegalCharacters.Length];
             string sorted = "";
@@ -120,60 +141,8 @@ namespace HighHandedApp
             return sorted;
         }
 
-        // TODO: Sometime when I'm bored, figure out why the static Tuple + foreach
-        // TODO: doesn't work, whereas the creating the patterncheckers each
-        // TODO: time does work. But only when bored + nothing else to do.
-/*        private static List<Tuple<HandRating, IPatternChecker>> _handCheckers =
-            new List<Tuple<HandRating, IPatternChecker>>()
-            {
-                new Tuple<HandRating, IPatternChecker>( HandRating.FOUROFAKIND, new FourOfAKindPatternChecker() ),
-                new Tuple<HandRating, IPatternChecker>( HandRating.FULLHOUSE, new FullHousePatternChecker()),
-                new Tuple<HandRating, IPatternChecker>( HandRating.STRAIGHT, new StraightPatternChecker()),
-                new Tuple<HandRating, IPatternChecker>( HandRating.THREEOFAKIND, new ThreeOfAKindPatternChecker()),
-                new Tuple<HandRating, IPatternChecker>( HandRating.TWOPAIR, new TwoPairPatternChecker()),
-                new Tuple<HandRating, IPatternChecker>( HandRating.PAIR, new PairPatternChecker()),
-                new Tuple<HandRating, IPatternChecker>( HandRating.HIGHCARD, new HighCardPatternMatcher()),
-            };*/
-
-        public static Tuple<HandRating,int> GetHandRating( string hand )
-        {
-            IPatternChecker checker = new FourOfAKindPatternChecker();
-            var result = checker.CheckHand( hand );
-            if ( result >= 0 )
-                return new Tuple<HandRating, int>( HandRating.FOUROFAKIND, result );
-            
-            checker = new FullHousePatternChecker();
-            result = checker.CheckHand( hand );
-            if ( result >= 0 )
-                return new Tuple<HandRating, int>( HandRating.FULLHOUSE, result );
-            
-            checker = new StraightPatternChecker();
-            result = checker.CheckHand( hand );
-            if ( result >= 0 )
-                return new Tuple<HandRating, int>( HandRating.STRAIGHT, result );
-            
-            checker = new ThreeOfAKindPatternChecker();
-            result = checker.CheckHand( hand );
-            if ( result >= 0 )
-                return new Tuple<HandRating, int>( HandRating.THREEOFAKIND, result );
-            
-            checker = new TwoPairPatternChecker();
-            result = checker.CheckHand( hand );
-            if ( result >= 0 )
-                return new Tuple<HandRating, int>( HandRating.TWOPAIR, result );
-            
-            checker = new PairPatternChecker();
-            result = checker.CheckHand( hand );
-            if ( result >= 0 )
-                return new Tuple<HandRating, int>( HandRating.PAIR, result );
-            
-            checker = new HighCardPatternMatcher();
-            result = checker.CheckHand( hand );
-            if ( result >= 0 )
-                return new Tuple<HandRating, int>( HandRating.HIGHCARD, result );            
-            
-            // TODO: can't see why this doesn't work
-/*
+        public Tuple<HandRating,int> GetHandRating( string hand )
+        {           
             foreach ( var patternTuple in _handCheckers )
             {
                 int result = patternTuple.Item2.CheckHand( hand ); 
@@ -182,7 +151,6 @@ namespace HighHandedApp
                     return new Tuple<HandRating, int>(patternTuple.Item1, result);
                 }
             }
-*/
 
             return new Tuple<HandRating, int>( HandRating.NONE, -1 );
         }

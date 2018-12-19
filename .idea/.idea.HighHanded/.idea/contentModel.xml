@@ -26,6 +26,7 @@
         <e p="PatternCheckerBase.cs" t="Include" />
         <e p="PlayHand.cs" t="Include" />
         <e p="Program.cs" t="Include" />
+        <e p="README.md" t="Include" />
         <e p="StraightPatternChecker.cs" t="Include" />
         <e p="ThreeOfAKindPatternChecker.cs" t="Include" />
         <e p="TwoPairPatternChecker.cs" t="Include" />
@@ -54,7 +55,8 @@
       <e p="packages" t="ExcludeRecursive" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2018.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_HighHanded.-928830771.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_HighHanded.1925084880.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
   </component>
 </project>

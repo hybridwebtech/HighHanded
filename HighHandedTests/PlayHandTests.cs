@@ -9,7 +9,10 @@ namespace HighHandedTests
         [Test]
         public void Test_GetHandRating_With_Valid_Hand()
         {
-            var rating = PlayHand.GetHandRating( "65432" );
+            var play = new PlayHand();
+            
+            var rating = play.GetHandRating( "65432" );
+            Assert.AreEqual( rating.Item1, HandRating.STRAIGHT );
         }
         
         [Test]
@@ -39,7 +42,9 @@ namespace HighHandedTests
         [Test]
         public void Test_SortHand()
         {
-            PlayHand.SortHand( "23456" );
+            var play = new PlayHand();
+            
+            play.SortHand( "23456" );
         }
     }
 }

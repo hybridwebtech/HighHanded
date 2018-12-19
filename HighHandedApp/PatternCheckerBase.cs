@@ -5,7 +5,7 @@ namespace HighHandedApp
 {
     public class PatternCheckerBase: IPatternChecker
     {
-        protected static List<string> _patterns = new List<string>();
+        protected List<string> _patterns = new List<string>();
         
         public int CheckHand( string hand, int exclude = -1 )
         {
