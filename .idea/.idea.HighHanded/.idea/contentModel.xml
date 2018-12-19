@@ -45,6 +45,7 @@
           </e>
         </e>
         <e p="PairPatternCheckerTests.cs" t="Include" />
+        <e p="PlayHandTests.cs" t="Include" />
         <e p="StraightPatternCheckerTests.cs" t="Include" />
         <e p="TestPlayHand.cs" t="Include" />
         <e p="ThreeOfAKindPatternCheckerTests.cs" t="Include" />

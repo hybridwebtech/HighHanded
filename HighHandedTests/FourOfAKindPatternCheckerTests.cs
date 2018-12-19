@@ -78,5 +78,13 @@ namespace HighHandedTests
             Assert.AreEqual(12, checker.CheckHand( "AAAA*" ));
             Assert.AreEqual(12, checker.CheckHand( "*AAAA" ));            
         }
+
+        [Test]
+        public void Test_With_Specific_Hand()
+        {
+            var checker = new FourOfAKindPatternChecker();
+
+            Assert.AreEqual(-1, checker.CheckHand( "AAKKK" ));
+        }
     }
 }
