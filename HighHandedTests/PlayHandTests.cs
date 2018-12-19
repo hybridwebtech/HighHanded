@@ -17,7 +17,17 @@ namespace HighHandedTests
         {
             var play = new PlayHand();
 
-            string result = play.Play( "AAKKK 23456" );
+            Assert.AreEqual( "FULLHOUSE STRAIGHT a", play.Play( "AAKKK 23456" ) );
+            
+            Assert.AreEqual( "PAIR PAIR b", play.Play( "KA225 33A47" ) );
+            
+            Assert.AreEqual( "TWOPAIR THREEOFAKIND a", play.Play( "AA225 44465" ) );
+            
+            Assert.AreEqual( "PAIR PAIR ab", play.Play( "TT4A2 TTA89" ) );
+            
+            Assert.AreEqual( "STRAIGHT STRAIGHT b", play.Play( "A345* 254*6" ) );
+            
+            Assert.AreEqual( "PAIR PAIR a", play.Play( "QQ2AT QQT2J" ) );
         }
 
         [Test]

@@ -64,7 +64,16 @@ namespace HighHandedApp
             Tuple<HandRating, int> handARating = GetHandRating( handA );
             Tuple<HandRating, int> handBRating = GetHandRating( handB );
 
-            string result = handARating.Item1.ToString() + " " + handBRating.Item1.ToString();
+            string result = handARating.Item1.ToString() + " " + handBRating.Item1.ToString() + " ";
+
+            if ( handARating.Item2 == handBRating.Item2 )
+            {
+                result += "ab";
+            }
+            else
+            {
+                result += handARating.Item2 > handBRating.Item2 ? "a" : "b";
+            }
 
             return result;
         }
@@ -108,7 +117,10 @@ namespace HighHandedApp
             return sorted;
         }
 
-        private static List<Tuple<HandRating, IPatternChecker>> _handCheckers =
+        // TODO: Sometime when I'm bored, figure out why the static Tuple + foreach
+        // TODO: doesn't work, whereas the creating the patterncheckers each
+        // TODO: time does work. But only when bored + nothing else to do.
+/*        private static List<Tuple<HandRating, IPatternChecker>> _handCheckers =
             new List<Tuple<HandRating, IPatternChecker>>()
             {
                 new Tuple<HandRating, IPatternChecker>( HandRating.FOUROFAKIND, new FourOfAKindPatternChecker() ),
@@ -118,7 +130,7 @@ namespace HighHandedApp
                 new Tuple<HandRating, IPatternChecker>( HandRating.TWOPAIR, new TwoPairPatternChecker()),
                 new Tuple<HandRating, IPatternChecker>( HandRating.PAIR, new PairPatternChecker()),
                 new Tuple<HandRating, IPatternChecker>( HandRating.HIGHCARD, new HighCardPatternMatcher()),
-            };
+            };*/
 
         public static Tuple<HandRating,int> GetHandRating( string hand )
         {
@@ -157,14 +169,17 @@ namespace HighHandedApp
             if ( result >= 0 )
                 return new Tuple<HandRating, int>( HandRating.HIGHCARD, result );            
             
-//            foreach ( var patternTuple in _handCheckers )
-//            {
-//                int result = patternTuple.Item2.CheckHand( hand ); 
-//                if ( result >= 0 )
-//                {
-//                    return new Tuple<HandRating, int>(patternTuple.Item1, result);
-//                }
-//            }
+            // TODO: can't see why this doesn't work
+/*
+            foreach ( var patternTuple in _handCheckers )
+            {
+                int result = patternTuple.Item2.CheckHand( hand ); 
+                if ( result >= 0 )
+                {
+                    return new Tuple<HandRating, int>(patternTuple.Item1, result);
+                }
+            }
+*/
 
             return new Tuple<HandRating, int>( HandRating.NONE, -1 );
         }
