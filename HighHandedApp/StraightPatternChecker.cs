@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace HighHandedApp
 {
+    /// <summary>
+    /// Definition of all character patterns which match the STRAIGHT pattern
+    /// </summary>
     public class StraightPatternChecker: PatternCheckerBase
     {
         public StraightPatternChecker() : base()

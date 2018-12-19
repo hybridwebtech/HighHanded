@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace HighHandedApp
 {
+    /// <summary>
+    /// Definition of all character patterns which match the THREEOFAKIND pattern
+    /// </summary>
     public class ThreeOfAKindPatternChecker : PatternCheckerBase
     {
         public ThreeOfAKindPatternChecker() : base()

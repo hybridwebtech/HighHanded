@@ -1,5 +1,8 @@
 namespace HighHandedApp
 {
+    /// <summary>
+    /// Enumeration of the names of all recognized winning hands
+    /// </summary>
     public enum HandRating
     {
         NONE = 0,

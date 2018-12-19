@@ -3,6 +3,9 @@ using HighHandedApp;
 
 namespace HighHandedApp
 {
+    /// <summary>
+    /// Definition of all character patterns which match the PAIR pattern
+    /// </summary>
     public class PairPatternChecker : PatternCheckerBase
     {
         public PairPatternChecker()
@@ -13,6 +16,15 @@ namespace HighHandedApp
             };
         }
 
+        /// <summary>
+        /// Return the subpattern at the spefied index
+        /// </summary>
+        /// <param name="index">Index of a previously determined match</param>
+        /// <returns>Matching pattern, or empty string if index is out-of-range</returns>
+        /// <remarks>
+        /// This method will be typically used prior to calling <see cref="PatternCheckerBase"/>.CheckHand
+        /// with a non-default exclusion.
+        /// </remarks>
         public string GetPairStringByIndex( int index )
         {
             if ( index >= 0 && index < _patterns.Count )

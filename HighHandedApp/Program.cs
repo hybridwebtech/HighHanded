@@ -2,6 +2,9 @@
 
 namespace HighHandedApp
 {
+    /// <summary>
+    /// Console driver for a poker simulator application
+    /// </summary>
     class Program
     {
         static void Main(string[] args)

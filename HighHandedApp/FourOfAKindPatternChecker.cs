@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace HighHandedApp
 {
+    /// <summary>
+    /// Definition of all character patterns which match the FOUROFAKIND pattern
+    /// </summary>
     public class FourOfAKindPatternChecker : PatternCheckerBase
     {
         public FourOfAKindPatternChecker() : base()

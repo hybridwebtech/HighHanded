@@ -2,6 +2,9 @@ using System;
 
 namespace HighHandedApp
 {
+    /// <summary>
+    /// Implementation of a pattern matcher for the TWOPAIR pattern.
+    /// </summary>
     public class TwoPairPatternChecker : IPatternChecker
     {
         public int CheckHand( string hand, int exclude = -1 )
