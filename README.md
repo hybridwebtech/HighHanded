@@ -33,7 +33,7 @@ HighHanded indicates that the first hand, indicated by 'a', is the winner.
 ## Build
 
 Run `dotnet build` from the solution folder to build the entire solution. The build artifacts will be stored in the
-`bin` directories of each prohect.
+`bin` directories of each project.
 
 ## Running unit tests
 
