@@ -48,18 +48,21 @@ namespace HighHandedApp
                 return AMBIGUOUS_INPUT_MSG;
             }
 
-            string handA = SortHand( hands[0].ToUpper() );
-            string handB = SortHand( hands[1].ToUpper() );
+            string handA = hands[0].ToUpper();
+            string handB = hands[1].ToUpper();
 
             if (handA.Length != 5 || handB.Length != 5)
             {
                 return MALFORMED_INPUT_MSG;
             }
-
+            
             if (!IsValidHand(handA) || !IsValidHand(handB))
             {
                 return ILLEGAL_INPUT_MSG;
             }
+
+            handA = SortHand( handA );
+            handB = SortHand( handB );
 
             Tuple<HandRating, int> handARating = GetHandRating( handA );
             Tuple<HandRating, int> handBRating = GetHandRating( handB );

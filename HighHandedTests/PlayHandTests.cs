@@ -24,10 +24,16 @@ namespace HighHandedTests
             Assert.AreEqual( "TWOPAIR THREEOFAKIND a", play.Play( "AA225 44465" ) );
             
             Assert.AreEqual( "PAIR PAIR ab", play.Play( "TT4A2 TTA89" ) );
+                        
+            Assert.AreEqual( "PAIR PAIR a", play.Play( "QQ2AT QQT2J" ) );
+        }
+
+        [Test]
+        public void Test_With_Wildcards()
+        {
+            var play = new PlayHand();
             
             Assert.AreEqual( "STRAIGHT STRAIGHT b", play.Play( "A345* 254*6" ) );
-            
-            Assert.AreEqual( "PAIR PAIR a", play.Play( "QQ2AT QQT2J" ) );
         }
 
         [Test]
